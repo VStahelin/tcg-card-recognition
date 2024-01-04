@@ -1,15 +1,14 @@
 from hashing import convert_hash
 from hashing import dhash
-import argparse
 import pickle
 import time
 import cv2
 
 VP_TREE = "hash/vptree.pickle"
 HASHES = "hash/hashes.pickle"
-QUERY = "photos/samples/img_3.png"
-DISTANCE = 20
-
+# QUERY = "photos/samples/img_3.png"
+QUERY = "src/photos/img_249.png"
+DISTANCE = 18
 
 
 # ap = argparse.ArgumentParser()
@@ -36,7 +35,7 @@ results = sorted(results)
 end = time.time()
 print("[INFO] search took {} seconds".format(end - start))
 
-for (d, h) in results:
+for d, h in results:
     print("-------------------------------------------------------------")
     resultPaths = hashes.get(h, [])
     print("[INFO] {} total image(s) with d: {}, h: {}".format(len(resultPaths), d, h))

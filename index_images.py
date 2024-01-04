@@ -2,7 +2,6 @@ from hashing import convert_hash
 from hashing import hamming
 from hashing import dhash
 from imutils import paths
-import argparse
 import pickle
 import vptree
 import cv2
@@ -19,7 +18,7 @@ HASHES = "hash/hashes.pickle"
 
 imagePaths = list(paths.list_images(IMAGES))
 hashes = {}
-for (i, imagePath) in enumerate(imagePaths):
+for i, imagePath in enumerate(imagePaths):
     print("[INFO] processing image {}/{}".format(i + 1, len(imagePaths)))
     image = cv2.imread(imagePath)
     h = dhash(image)
@@ -40,4 +39,3 @@ print("[INFO] serializing hashes...")
 f = open(HASHES, "wb")
 f.write(pickle.dumps(hashes))
 f.close()
-

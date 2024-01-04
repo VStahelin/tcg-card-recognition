@@ -1,0 +1,9 @@
+# namedtuple('Settings', 'IMAGE_CAPTURE_SIZE IMAGE_CAPTURE_FPS IMAGE_CAPTURE_DEVICE IMAGE_THRESHOLDS')
+from collections import namedtuple
+
+IMAGE_CAPTURE_SIZE = namedtuple("ImageCaptureSize", ["WIDTH", "HEIGHT"])(480, 854)
+IMAGE_CAPTURE_FPS = 10
+IMAGE_CAPTURE_DEVICE = 0
+IMAGE_THRESHOLDS = (120, 120)
+
+CARD_DIMENSIONS = namedtuple("CardDimensions", ["WIDTH", "HEIGHT"])(344, 480)
